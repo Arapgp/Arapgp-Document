@@ -12,11 +12,11 @@
 
     |Key|Value-Example|
     |-|-|
-    | uid | 1 |
+    | username | "ljg" |
 
   * Example
 
-    uid=1
+    username="ljg"
 
 * Response Body
 
