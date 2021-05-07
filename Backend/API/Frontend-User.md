@@ -3,6 +3,8 @@
 
 该部分 `API` 针对数据库中 `User` 实体及其部分属性（包括但不限于 `User` 本身，`username`，`password`，`userid`）进行增删改查。
 
+数据库中确有 `id` 字段，但该字段不适合传给前端，故将原本 `uid` 出现的地方改为其他具有等同效力的属性。
+
 **注：`API` 中的字段仅作前后端交互使用，不同于数据库中字段**。
 
 ## 1. 注册
@@ -97,7 +99,7 @@
     |-|-|-|
     | status | string | "OK" |
     | lastLoginTime | string | "1970-01-01 12:34:59" |
-    | uid | int | 1 |
+    | session | string | "asda2sd1354w3adsd2ad" |
 
   * Example
 
@@ -107,7 +109,7 @@
       {
           "status": "OK",
           "lastLoginTime": "1970-01-01 12:34:59",
-          "uid": 1
+          "session": "asda2sd1354w3adsd2ad"
       }
       ```
 
@@ -186,7 +188,6 @@
 
     | Key | Value-Type | Example |
     |-|-|-|
-    | uid | int | 1 |
     | username | string | "admin" |
 
   * Example
@@ -196,7 +197,6 @@
         "status": "OK",
         "userList": [
             {
-                "uid":1,
                 "username": "admin"
             }
         ]
