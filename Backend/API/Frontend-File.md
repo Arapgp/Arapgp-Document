@@ -8,7 +8,7 @@
 
 | Method | Path |
 |-|-|
-| POST | `api/v1/file` |
+| POST | `api/v1/user/:username/file` |
 
 * Request Body
 
@@ -72,11 +72,19 @@
         }
         ```
 
+      * d. 用户不存在
+
+        ```json
+        {
+            "status": "User do not exist!"
+        }
+        ```
+
 ## 2. 获得文件
 
 | Method | Path |
 |-|-|
-| GET | `api/v1/pubKey` |
+| GET | `api/v1/user/:username/file` |
 
 * Param
 
@@ -134,11 +142,19 @@
         }
         ```
 
+      * d. 用户不存在
+
+        ```json
+        {
+            "status": "User do not exist!"
+        }
+        ```
+
 ## 3. 修改文件
 
 | Method | Path |
 |-|-|
-| PUT | `api/v1/file` |
+| PUT | `api/v1/user/:username/file` |
 
 * Request Body
 
@@ -202,11 +218,19 @@
         }
         ```
 
+      * d. 用户不存在
+
+        ```json
+        {
+            "status": "User do not exist!"
+        }
+        ```
+
 ## 4. 删除文件
 
 | Method | Path |
 |-|-|
-| DELETE | `api/v1/file` |
+| DELETE | `api/v1/user/:username/file` |
 
 * Request Body
 
@@ -265,5 +289,69 @@
         ```json
         {
             "status": "File do not exist!"
+        }
+        ```
+
+      * d. 用户不存在
+
+        ```json
+        {
+            "status": "User do not exist!"
+        }
+        ```
+
+## 5. 通过用户名获取文件信息
+
+需要注意的是，本 `api` 并非通过文件名获取文件。而是通过用户名，获取所有用户下的所有文件。
+
+| Method | Path |
+|-|-|
+| GET | `api/v1/user/:username/filesinfo` |
+
+* Response Body
+
+  * Format
+
+    | Key | Value-Type | Example |
+    |-|-|-|
+    | status | string | "OK" |
+    | info | array |  |
+
+  * Example
+
+    * Normal
+
+      ```json
+      {
+          "status": "OK",
+          "info": [
+            { "name": "hahah.txt", "author": "ljg", "createTime": "2021-05-27 09:49:13" }
+          ]
+      }
+      ```
+
+    * Error
+
+      * a. 未登录
+
+        ```json
+        {
+            "status": "Unauthenticated!"
+        }
+        ```
+
+      * b. 意外错误
+
+        ```json
+        {
+            "status": "Unexpected error!"
+        }
+        ```
+
+      * c. 用户不存在
+
+        ```json
+        {
+            "status": "User do not exist!"
         }
         ```
