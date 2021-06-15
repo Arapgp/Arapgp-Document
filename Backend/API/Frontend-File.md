@@ -18,13 +18,15 @@
     |-|-|-|
     | name | string | "hahah.txt" |
     | content | string | "-----BEGIN PGP MESSAGE-----\n\nasdsadasda-----END PGP MESSAGE-----" |
+    | pubKey | string | "a long text, much longer than you think" |
 
   * Example
 
     ```json
     {
         "name": "hahah.txt",
-        "content": "-----BEGIN PGP MESSAGE-----\n\nasdsadasda-----END PGP MESSAGE-----"
+        "content": "-----BEGIN PGP MESSAGE-----\n\nasdsadasda-----END PGP MESSAGE-----",
+        "pubKey": "a long text, much longer than you think"
     }
     ```
 

@@ -182,13 +182,13 @@
     | Key | Value-Type | Example |
     |-|-|-|
     | status | string | "OK" |
-    | userList | array[user(Object)] | [{ }, { }, { }] |
+    | userList | array[User(Object)] | [{ }, { }, { }] |
 
   * user(Object) Format
 
     | Key | Value-Type | Example |
     |-|-|-|
-    | username | string | "admin" |
+    | Username | string | "admin" |
 
   * Example
 
@@ -197,7 +197,7 @@
         "status": "OK",
         "userList": [
             {
-                "username": "admin"
+                "Username": "admin"
             }
         ]
     }
