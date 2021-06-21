@@ -69,12 +69,14 @@
     | Key | Value-Type | Example |
     |-|-|-|
     | pubKey | string | "a long text, much longer than you think" |
+    | username | string | "ljg" |
 
   * Example
 
     ```json
     {
-        "pubKey": "a long text, much longer than you think"
+        "pubKey": "a long text, much longer than you think",
+        "username": "ljg"
     }
     ```
 
